@@ -1,5 +1,5 @@
-import catImage from "/src/images/meow.png";
-import dogImage from "/src/images/woof.png";
+import catImage from "/assets/images/meow.png";
+import dogImage from "/assets/images/woof.png";
 import H1 from "../H1";
 import H2 from "../H2";
 

@@ -1,4 +1,4 @@
-import headlineImage from "/src/images/headline_image.png";
+import headlineImage from "/assets/images/headline_image.png";
 
 export default function Header() {
   return (
