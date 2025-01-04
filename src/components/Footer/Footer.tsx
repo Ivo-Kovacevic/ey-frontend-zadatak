@@ -3,7 +3,7 @@ import H3 from "../H3";
 export default function Footer() {
   return (
     <footer className="bg-[#1D1D1D] text-white">
-      <section className="mx-auto flex max-w-screen-lg flex-wrap justify-between py-16">
+      <section className="mx-auto flex max-w-screen-lg flex-col flex-wrap justify-between p-4 py-16 md:flex-row">
         <div className="flex flex-col items-center">
           <H3>PET-FACTS.COM</H3>
           <a href="#">About us</a>

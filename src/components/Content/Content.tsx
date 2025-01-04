@@ -1,15 +1,15 @@
-import catImage from "../../assets/images/meow.png";
-import dogImage from "../../assets/images/woof.png";
+import catImage from "/src/images/meow.png";
+import dogImage from "/src/images/woof.png";
 import H1 from "../H1";
 import H2 from "../H2";
 
 export default function Content() {
   return (
-    <section className="bg-[#F7F7F7]">
+    <section className="bg-gray-100 p-4">
       <div className="mx-auto max-w-screen-xl">
         <H1>Daily pet facts - Love!</H1>
 
-        <article className="mx-4 my-10 flex flex-col gap-6 md:flex-row">
+        <article className="my-10 flex flex-col gap-6 md:flex-row">
           <img src={catImage} alt="closeup picture of a cat" className="rounded-xl" />
 
           <div className="flex flex-col justify-between gap-8 md:gap-0">
@@ -31,7 +31,7 @@ export default function Content() {
           </div>
         </article>
 
-        <article className="mx-4 my-10 flex flex-col gap-6 md:flex-row-reverse">
+        <article className="my-10 flex flex-col gap-6 md:flex-row-reverse">
           <img src={dogImage} alt="closeup picture of a dog" className="rounded-xl" />
 
           <div className="flex flex-col justify-between gap-8 md:gap-0">

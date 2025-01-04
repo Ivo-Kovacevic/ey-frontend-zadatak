@@ -8,7 +8,7 @@ export default function App() {
     <>
       <Header />
 
-      <main>
+      <main className="">
         <Content />
         <Gallery />
       </main>
