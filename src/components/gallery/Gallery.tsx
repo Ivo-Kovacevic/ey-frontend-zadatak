@@ -4,7 +4,6 @@ import H1 from "../H1";
 export default function Gallery() {
   const imagesImport = import.meta.glob("/src/images/gallery/*");
   const images = Object.values(imagesImport).map((image) => image.name);
-  console.log(images);
 
   const [imageIndex, setImageIndex] = useState(Math.floor(images.length / 2));
 
@@ -23,18 +22,20 @@ export default function Gallery() {
   };
 
   return (
-    <section className="mx-auto max-w-screen-xl px-4 flex flex-col items-center">
+    <section className="mx-auto flex max-w-screen-xl flex-col items-center px-4">
       <H1>Gallery</H1>
 
       <article>
-        <div className="relative flex">
+        <div className="relative flex gap-16">
           {images.map((image, index) => (
             <img
               key={image}
               src={image}
               alt={`Scrollable image ${index + 1}`}
-              className={`relative left-1/2 min-w-full rounded-xl object-cover p-2 transition-all duration-300 ease-in-out sm:min-w-[500px] md:p-16`}
-              style={{ transform: `translateX(calc(-50% + ${-100 * imageIndex}%))` }}
+              className={`relative left-1/2 min-w-full rounded-xl object-cover transition-all duration-300 ease-in-out sm:min-w-[500px]`}
+              style={{
+                transform: `translateX(calc(-50% + ${-100 * imageIndex}% - ${4 * imageIndex}rem))`,
+              }}
             />
           ))}
         </div>
@@ -49,7 +50,7 @@ export default function Gallery() {
         </div>
       </article>
 
-      <article className="my-16 grid grid-cols-2 gap-4 md:grid-cols-4">
+      <article className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4">
         {images.map((image) => (
           <img key={image} src={image} alt="" className="rounded-xl" />
         ))}

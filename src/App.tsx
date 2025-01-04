@@ -1,19 +1,25 @@
-import Content from "./components/Content/Content";
-import Gallery from "./components/Gallery/Gallery";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+import Content from "./components/content/Content";
+import Gallery from "./components/gallery/Gallery";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import Form from "./components/form/Form";
 
 export default function App() {
   return (
     <>
-      <Header />
+      <header>
+        <Header />
+      </header>
 
-      <main className="">
+      <main className="overflow-hidden">
         <Content />
         <Gallery />
+        <Form />
       </main>
 
-      <Footer />
+      <footer className="bg-neutral-900 text-white">
+        <Footer />
+      </footer>
     </>
   );
 }
