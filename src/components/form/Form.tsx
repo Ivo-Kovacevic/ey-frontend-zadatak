@@ -1,5 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import H1 from "../H1";
+import { useRef, useState } from "react";
 
 type FormFields = {
   name: string;
@@ -8,15 +9,16 @@ type FormFields = {
 };
 
 export default function Form() {
+  const modalRef = useRef<HTMLDialogElement>(null);
+  const animals = ["mačka", "pas", "hrčak"];
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormFields>();
-  const animals = ["mačka", "pas", "hrčak"];
 
   const onSubmit: SubmitHandler<FormFields> = (data) => {
-    console.log(data);
+    modalRef.current?.showModal();
   };
 
   return (
@@ -38,7 +40,13 @@ export default function Form() {
           Email:
         </label>
         <input
-          {...register("email", { required: "Email is required" })}
+          {...register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]/,
+              message: "Please enter a valid email address",
+            },
+          })}
           type="email"
           id="email"
           name="email"
@@ -62,10 +70,20 @@ export default function Form() {
         ))}
         {errors.animal && <div className="text-red-600">{errors.animal.message}</div>}
 
-        <button className="mt-4 rounded-xl border-2 border-neutral-900 p-2 hover:bg-neutral-900 hover:text-white">
+        <button className="mt-4 rounded-xl border-2 border-neutral-900 p-2 hover:bg-neutral-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-neutral-900">
           Submit
         </button>
       </form>
+
+      <dialog ref={modalRef} className="rounded-xl p-4 text-center">
+        <p className="m-4">Uspješna prijava</p>
+        <button
+          onClick={() => modalRef.current?.close()}
+          className="rounded-xl border-2 border-neutral-900 p-2 hover:bg-neutral-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-neutral-900"
+        >
+          Zatvori modal
+        </button>
+      </dialog>
     </section>
   );
 }
