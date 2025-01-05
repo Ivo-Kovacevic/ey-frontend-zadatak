@@ -1,9 +1,20 @@
 import { useState } from "react";
+import image1 from "/src/images/gallery/image1.png";
+import image2 from "/src/images/gallery/image2.png";
+import image3 from "/src/images/gallery/image3.png";
+import image4 from "/src/images/gallery/image4.png";
+import image5 from "/src/images/gallery/image5.png";
+import image6 from "/src/images/gallery/image6.png";
+import image7 from "/src/images/gallery/image7.png";
+import image8 from "/src/images/gallery/image8.png";
 import H1 from "../H1";
 
 export default function Gallery() {
-  const imagesImport = import.meta.glob("/src/images/gallery/*");
-  const images = Object.values(imagesImport).map((image) => image.name);
+  // Works in dev but not in prod
+  // const imagesImport = import.meta.glob("/src/images/gallery/*");
+  // const images = Object.values(imagesImport).map((image) => image.name);
+
+  const images = [image1, image2, image3, image4, image5, image6, image7, image8];
 
   const [imageIndex, setImageIndex] = useState(Math.floor(images.length / 2));
 
