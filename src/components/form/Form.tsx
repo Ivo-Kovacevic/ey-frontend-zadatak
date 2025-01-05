@@ -1,6 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import H1 from "../H1";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 type FormFields = {
   name: string;
@@ -17,7 +17,7 @@ export default function Form() {
     formState: { errors },
   } = useForm<FormFields>();
 
-  const onSubmit: SubmitHandler<FormFields> = (data) => {
+  const onSubmit: SubmitHandler<FormFields> = () => {
     modalRef.current?.showModal();
   };
 
