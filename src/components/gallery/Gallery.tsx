@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import image1 from "/src/images/gallery/image1.png";
 import image2 from "/src/images/gallery/image2.png";
 import image3 from "/src/images/gallery/image3.png";
@@ -15,8 +15,17 @@ export default function Gallery() {
   // const images = Object.values(imagesImport).map((image) => image.name);
 
   const images = [image1, image2, image3, image4, image5, image6, image7, image8];
-
   const [imageIndex, setImageIndex] = useState(Math.floor(images.length / 2));
+  const [selectedId, setSelectedId] = useState<number | null>(null);
+
+  // Disable scrolling when image is selected
+  useEffect(() => {
+    if (selectedId !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [selectedId]);
 
   const prevImage = () => {
     setImageIndex((prevIndex) => {
@@ -43,7 +52,7 @@ export default function Gallery() {
               key={image}
               src={image}
               alt={`Scrollable image ${index + 1}`}
-              className={`relative left-1/2 min-w-full rounded-xl object-cover transition-all duration-300 ease-in-out sm:min-w-[500px]`}
+              className={`relative left-1/2 rounded-xl object-cover transition-all duration-300 ease-in-out sm:min-w-[500px]`}
               style={{
                 transform: `translateX(calc(-50% + ${-100 * imageIndex}% - ${4 * imageIndex}rem))`,
               }}
@@ -61,9 +70,24 @@ export default function Gallery() {
         </div>
       </article>
 
-      <article className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4">
-        {images.map((image) => (
-          <img key={image} src={image} alt="" className="rounded-xl" />
+      <article className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4">
+        {images.map((image, index) => (
+          <div key={image}>
+            <div
+              className={`flex items-center justify-center ${selectedId === index ? "fixed inset-0 bg-neutral-900/75 p-4" : ""}`}
+              onClick={() => setSelectedId(null)}
+            >
+              <img
+                src={image}
+                alt=""
+                className="w-full max-w-[500px] rounded-xl hover:cursor-pointer hover:brightness-50"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedId(index);
+                }}
+              />
+            </div>
+          </div>
         ))}
       </article>
     </section>
