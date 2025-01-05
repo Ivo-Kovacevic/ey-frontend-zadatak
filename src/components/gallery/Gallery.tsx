@@ -2,7 +2,7 @@ import { useState } from "react";
 import H1 from "../H1";
 
 export default function Gallery() {
-  const imagesImport = import.meta.glob("/public/assets/images/gallery/*");
+  const imagesImport = import.meta.glob("/src/images/gallery/*");
   const images = Object.values(imagesImport).map((image) => image.name);
 
   const [imageIndex, setImageIndex] = useState(Math.floor(images.length / 2));

@@ -1,16 +1,35 @@
-import catImage from "/assets/images/meow.png";
-import dogImage from "/assets/images/woof.png";
+import { useEffect, useState } from "react";
+import catImage from "/src/images/meow.png";
+import dogImage from "/src/images/woof.png";
 import H1 from "../H1";
 import H2 from "../H2";
+import ContentSkeleton from "./ContentSkeleton";
 
 export default function Content() {
+  const [loading, setLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState(0);
+
+  useEffect(() => {
+    if (loadedImages === 2) {
+      setLoading(false);
+    }
+  }, [loadedImages]);
+
   return (
-    <section className="bg-gray-100 p-4">
-      <div className="mx-auto max-w-screen-xl">
+    <>
+      {loading && <ContentSkeleton />}
+      <section
+        className={`bg-gray-100 p-4 transition-opacity duration-300 ${loading ? "opacity-0" : "opacity-100"}`}
+      >
         <H1>Daily pet facts - Love!</H1>
 
-        <article className="my-10 flex flex-col gap-6 md:flex-row">
-          <img src={catImage} alt="closeup picture of a cat" className="rounded-xl" />
+        <article className="mx-auto my-10 flex max-w-screen-xl flex-col gap-6 md:flex-row">
+          <img
+            src={catImage}
+            alt="closeup picture of a cat"
+            className="rounded-xl"
+            onLoad={() => setLoadedImages((prev) => prev + 1)}
+          />
 
           <div className="flex flex-col justify-between gap-8 md:gap-0">
             <H2>The cat</H2>
@@ -31,8 +50,13 @@ export default function Content() {
           </div>
         </article>
 
-        <article className="my-10 flex flex-col gap-6 md:flex-row-reverse">
-          <img src={dogImage} alt="closeup picture of a dog" className="rounded-xl" />
+        <article className="mx-auto my-10 flex max-w-screen-xl flex-col gap-6 md:flex-row-reverse">
+          <img
+            src={dogImage}
+            alt="closeup picture of a dog"
+            className="rounded-xl"
+            onLoad={() => setLoadedImages((prev) => prev + 1)}
+          />
 
           <div className="flex flex-col justify-between gap-8 md:gap-0">
             <H2>The dog</H2>
@@ -50,7 +74,7 @@ export default function Content() {
             </p>
           </div>
         </article>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
