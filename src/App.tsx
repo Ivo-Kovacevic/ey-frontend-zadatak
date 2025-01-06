@@ -3,6 +3,7 @@ import Gallery from "./components/gallery/Gallery";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Form from "./components/form/Form";
+import CookieBanner from "./components/CookieBanner";
 
 export default function App() {
   return (
@@ -20,6 +21,8 @@ export default function App() {
       <footer className="bg-neutral-900 text-white">
         <Footer />
       </footer>
+
+      <CookieBanner />
     </>
   );
 }
