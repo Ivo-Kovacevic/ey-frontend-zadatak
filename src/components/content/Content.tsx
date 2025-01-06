@@ -9,8 +9,8 @@ export default function Content() {
     const loadImage = async () => {
       const catImage = new Image();
       const dogImage = new Image();
-      catImage.src = "/src/images/meow.png";
-      dogImage.src = "/src/images/woof.png";
+      catImage.src = "images/meow.png";
+      dogImage.src = "images/woof.png";
       catImage.onload = dogImage.onload = () => setLoading(false);
     };
 
@@ -23,10 +23,10 @@ export default function Content() {
 
       <article className="mx-auto flex w-full max-w-screen-xl flex-col gap-6 md:flex-row">
         <div
-          className={`aspect-square w-full md:max-w-[400px] lg:max-w-[500px] flex-shrink-0 rounded-xl ${loading && "animate-pulse bg-gray-400"}`}
+          className={`aspect-square w-full flex-shrink-0 rounded-xl md:max-w-[400px] lg:max-w-[500px] ${loading && "animate-pulse bg-gray-400"}`}
         >
           <img
-            src="/src/images/meow.png"
+            src="images/meow.png"
             alt="closeup picture of a cat"
             className="w-full rounded-xl"
           />
@@ -53,10 +53,10 @@ export default function Content() {
 
       <article className="mx-auto flex max-w-screen-xl flex-col gap-6 md:flex-row-reverse">
         <div
-          className={`aspect-square w-full md:max-w-[400px] lg:max-w-[500px] flex-shrink-0 rounded-xl ${loading && "animate-pulse bg-gray-400"}`}
+          className={`aspect-square w-full flex-shrink-0 rounded-xl md:max-w-[400px] lg:max-w-[500px] ${loading && "animate-pulse bg-gray-400"}`}
         >
           <img
-            src="/src/images/woof.png"
+            src="images/woof.png"
             alt="closeup picture of a dog"
             className="w-full rounded-xl"
           />
