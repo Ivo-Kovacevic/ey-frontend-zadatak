@@ -22,7 +22,10 @@ export default function Form() {
   };
 
   return (
-    <section className="mx-auto max-w-screen-sm p-4" onSubmit={handleSubmit(onSubmit)}>
+    <section
+      className="mx-auto flex max-w-screen-sm flex-col gap-4 p-4"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <H1>Contact</H1>
       <form className="flex flex-col">
         <label htmlFor="name">Name:</label>
@@ -57,7 +60,7 @@ export default function Form() {
 
         <p className="mt-4">Pick an animal:</p>
         {animals.map((animal) => (
-          <div key={animal}>
+          <div key={animal} className="flex items-center gap-1">
             <input
               {...register("animal", { required: "Please pick an animal" })}
               type="radio"

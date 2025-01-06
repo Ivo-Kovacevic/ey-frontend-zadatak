@@ -19,11 +19,11 @@ export default function Content() {
     <>
       {loading && <ContentSkeleton />}
       <section
-        className={`bg-gray-100 p-4 transition-opacity duration-300 ${loading ? "opacity-0" : "opacity-100"}`}
+        className={`bg-gray-100 p-4 flex flex-col gap-4 transition-opacity duration-300 ${loading ? "opacity-0" : "opacity-100"}`}
       >
         <H1>Daily pet facts - Love!</H1>
 
-        <article className="mx-auto my-10 flex max-w-screen-xl flex-col gap-6 md:flex-row">
+        <article className="mx-auto flex max-w-screen-xl flex-col gap-6 md:flex-row">
           <img
             src={catImage}
             alt="closeup picture of a cat"
@@ -50,7 +50,7 @@ export default function Content() {
           </div>
         </article>
 
-        <article className="mx-auto my-10 flex max-w-screen-xl flex-col gap-6 md:flex-row-reverse">
+        <article className="mx-auto flex max-w-screen-xl flex-col gap-6 md:flex-row-reverse">
           <img
             src={dogImage}
             alt="closeup picture of a dog"

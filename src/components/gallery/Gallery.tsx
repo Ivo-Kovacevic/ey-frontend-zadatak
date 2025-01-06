@@ -42,17 +42,17 @@ export default function Gallery() {
   };
 
   return (
-    <section className="mx-auto flex max-w-screen-xl flex-col items-center px-4">
+    <section className="flex flex-col gap-4 p-4 transition-opacity duration-300">
       <H1>Gallery</H1>
 
-      <article>
-        <div className="relative flex gap-16">
+      <article className="mx-auto w-full max-w-screen-xl">
+        <div className="flex gap-16">
           {images.map((image, index) => (
             <img
               key={image}
               src={image}
               alt={`Scrollable image ${index + 1}`}
-              className={`relative left-1/2 rounded-xl object-cover transition-all duration-300 ease-in-out sm:min-w-[500px]`}
+              className={`relative left-1/2 rounded-xl transition-all duration-300 ease-in-out sm:min-w-[500px]`}
               style={{
                 transform: `translateX(calc(-50% + ${-100 * imageIndex}% - ${4 * imageIndex}rem))`,
               }}
@@ -70,7 +70,7 @@ export default function Gallery() {
         </div>
       </article>
 
-      <article className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4">
+      <article className="relative mx-auto grid w-full max-w-screen-xl grid-cols-2 gap-4 md:grid-cols-4">
         {images.map((image, index) => (
           <div key={image}>
             <div
