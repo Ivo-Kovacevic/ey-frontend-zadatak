@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import H1 from "../H1";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function Gallery() {
   const [images, setImages] = useState<string[]>(Array(8).fill(""));
@@ -68,11 +69,11 @@ export default function Gallery() {
         </div>
 
         <div className="flex justify-center gap-20 text-8xl">
-          <button className="hover:font-bold" onClick={prevImage}>
-            &lt;
+          <button onClick={prevImage} className="hover:animate-squish">
+            <ArrowLeft className="h-24 w-24" />
           </button>
-          <button className="hover:font-bold" onClick={nextImage}>
-            &gt;
+          <button onClick={nextImage} className="hover:animate-squish">
+            <ArrowRight className="h-24 w-24" />
           </button>
         </div>
       </article>

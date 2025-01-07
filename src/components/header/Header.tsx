@@ -1,19 +1,17 @@
 import { useState } from "react";
 import headlineImage from "/images/headline_image.png";
-import Skeleton from "./HeaderSkeleton";
 
 export default function Header() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <>
-      {loading && <Skeleton />}
+    <div className={`flex min-h-56 w-screen ${loading && "aspect-[3.5] animate-pulse bg-gray-400"}`}>
       <img
         src={headlineImage}
         alt="orange cat laying next to fence"
-        className={`min-h-48 w-screen object-cover transition-opacity duration-300 ${loading ? "opacity-0" : "opacity-100"}`}
+        className="w-full object-cover"
         onLoad={() => setLoading(false)}
       />
-    </>
+    </div>
   );
 }

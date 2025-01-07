@@ -23,13 +23,9 @@ export default function Content() {
 
       <article className="mx-auto flex w-full max-w-screen-xl flex-col gap-6 md:flex-row">
         <div
-          className={`aspect-square w-full flex-shrink-0 rounded-xl md:max-w-[400px] lg:max-w-[500px] ${loading && "animate-pulse bg-gray-400"}`}
+          className={`w-full flex-shrink-0 self-center rounded-xl md:w-2/5 ${loading && "aspect-square animate-pulse bg-gray-400"}`}
         >
-          <img
-            src="images/meow.png"
-            alt="closeup picture of a cat"
-            className="w-full rounded-xl"
-          />
+          <img src="images/meow.png" alt="closeup picture of a cat" className="w-full rounded-xl" />
         </div>
 
         <div className="flex flex-col justify-between gap-8 md:gap-0">
@@ -53,13 +49,9 @@ export default function Content() {
 
       <article className="mx-auto flex max-w-screen-xl flex-col gap-6 md:flex-row-reverse">
         <div
-          className={`aspect-square w-full flex-shrink-0 rounded-xl md:max-w-[400px] lg:max-w-[500px] ${loading && "animate-pulse bg-gray-400"}`}
+          className={`w-full flex-shrink-0 self-center rounded-xl md:w-2/5 ${loading && "aspect-square animate-pulse bg-gray-400"}`}
         >
-          <img
-            src="images/woof.png"
-            alt="closeup picture of a dog"
-            className="w-full rounded-xl"
-          />
+          <img src="images/woof.png" alt="closeup picture of a dog" className="w-full rounded-xl" />
         </div>
 
         <div className="flex flex-col justify-between gap-8 md:gap-0">

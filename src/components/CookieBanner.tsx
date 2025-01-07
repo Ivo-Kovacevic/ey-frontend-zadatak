@@ -5,8 +5,6 @@ export default function CookieBanner() {
 
   useEffect(() => {
     const consentStatus = localStorage.getItem("cookieConsent");
-    console.log(consentStatus);
-
     if (consentStatus === null) setShowBanner(true);
   }, []);
 
@@ -23,7 +21,7 @@ export default function CookieBanner() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 flex w-full items-center gap-4 border-t-2 border-neutral-900 bg-white px-4 p-8">
+    <div className="fixed bottom-0 left-0 flex w-full items-center gap-4 border-t-2 border-neutral-900 bg-white p-8 px-4">
       <p className="flex-grow">
         We use cookies to enhance your browsing experience and analyze our traffic. By clicking
         "Accept", you consent to our use of cookies.
