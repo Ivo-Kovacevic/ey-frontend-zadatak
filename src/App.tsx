@@ -12,7 +12,7 @@ export default function App() {
         <Header />
       </header>
 
-      <main className="overflow- text-neutral-800">
+      <main className="overflow-hidden text-neutral-800">
         <Content />
         <Gallery />
         <Form />
