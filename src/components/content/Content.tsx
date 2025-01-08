@@ -55,7 +55,7 @@ export default function Content() {
         <div
           className={`w-full flex-shrink-0 self-center rounded-xl md:w-2/5 ${loading && "aspect-square animate-pulse bg-gray-400"}`}
         >
-          <img src="images/woof.png" alt="closeup picture of a dog" className="w-full rounded-xl" />
+          <img src="images/woof.png" alt="closeup picture of a dog" className={`w-full rounded-xl transition-opacity ${loading ? "opacity-0" : "opacity-100"}`} />
         </div>
 
         <div className="flex flex-col justify-between gap-8 lg:text-lg xl:text-xl">
