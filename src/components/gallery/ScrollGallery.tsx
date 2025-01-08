@@ -39,10 +39,18 @@ export default function ScrollGallery({ images, loading }: GalleryType) {
       </div>
 
       <div className="flex justify-center gap-20 text-8xl">
-        <button onClick={prevImage} className={`group ${clicked === "prev" && "animate-squish"}`}>
+        <button
+          onClick={prevImage}
+          className={`group ${clicked === "prev" && "animate-squish"}`}
+          aria-label="Previous image"
+        >
           <ArrowLeft className="h-16 w-16 group-hover:animate-squish md:h-24 md:w-24" />
         </button>
-        <button onClick={nextImage} className={`group ${clicked === "next" && "animate-squish"}`}>
+        <button
+          onClick={nextImage}
+          className={`group ${clicked === "next" && "animate-squish"}`}
+          aria-label="Next image"
+        >
           <ArrowRight className="h-16 w-16 group-hover:animate-squish md:h-24 md:w-24" />
         </button>
       </div>
