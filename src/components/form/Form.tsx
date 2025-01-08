@@ -1,12 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import H1 from "../H1";
 import { useRef } from "react";
-
-type FormFields = {
-  name: string;
-  email: string;
-  animal: string;
-};
+import { FormFields } from "../../@types/types";
 
 export default function Form() {
   const modalRef = useRef<HTMLDialogElement>(null);
