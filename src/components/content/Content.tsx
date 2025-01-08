@@ -18,17 +18,21 @@ export default function Content() {
   }, []);
 
   return (
-    <section className="flex flex-col gap-4 bg-gray-100 p-4">
+    <section className="flex flex-col gap-8 bg-gray-100 p-4">
       <H1>Daily pet facts - Love!</H1>
 
       <article className="mx-auto flex w-full max-w-screen-xl flex-col gap-6 md:flex-row">
         <div
           className={`w-full flex-shrink-0 self-center rounded-xl md:w-2/5 ${loading && "aspect-square animate-pulse bg-gray-400"}`}
         >
-          <img src="images/meow.png" alt="closeup picture of a cat" className="w-full rounded-xl" />
+          <img
+            src="images/meow.png"
+            alt="closeup picture of a cat"
+            className={`w-full rounded-xl transition-opacity ${loading ? "opacity-0" : "opacity-100"}`}
+          />
         </div>
 
-        <div className="flex flex-col justify-between gap-8 md:gap-0">
+        <div className="flex flex-col justify-between gap-8 lg:text-lg xl:text-xl">
           <H2>The cat</H2>
           <p>
             Cats have been domesticated for around 4,000 years. While they were once valued for
@@ -47,14 +51,14 @@ export default function Content() {
         </div>
       </article>
 
-      <article className="mx-auto flex max-w-screen-xl flex-col gap-6 md:flex-row-reverse">
+      <article className="mx-auto flex max-w-screen-xl flex-col gap-6 my-8 md:flex-row-reverse">
         <div
           className={`w-full flex-shrink-0 self-center rounded-xl md:w-2/5 ${loading && "aspect-square animate-pulse bg-gray-400"}`}
         >
           <img src="images/woof.png" alt="closeup picture of a dog" className="w-full rounded-xl" />
         </div>
 
-        <div className="flex flex-col justify-between gap-8 md:gap-0">
+        <div className="flex flex-col justify-between gap-8 lg:text-lg xl:text-xl">
           <H2>The dog</H2>
           <p>
             Domestic dogs have been companions to people for more than 15,000 years. There are more

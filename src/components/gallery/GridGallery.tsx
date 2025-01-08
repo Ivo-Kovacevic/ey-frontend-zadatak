@@ -5,7 +5,7 @@ export default function GridGallery({ images, loading }: GalleryType) {
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
   return (
-    <article className="relative mx-auto grid w-full max-w-screen-xl grid-cols-2 gap-4 md:grid-cols-4">
+    <article className="relative mx-auto grid w-full max-w-screen-xl grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
       {images.map((image, index) => (
         <div key={`gallery-${index}`} className="">
           <div
