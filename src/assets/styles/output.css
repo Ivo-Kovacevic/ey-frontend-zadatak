@@ -609,16 +609,12 @@ video {
   display: grid;
 }
 
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-
-.aspect-\[\] {
-  aspect-ratio: ;
-}
-
 .aspect-\[3\.5\] {
   aspect-ratio: 3.5;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
 }
 
 .h-16 {
@@ -893,10 +889,6 @@ video {
 
 .duration-500 {
   transition-duration: 500ms;
-}
-
-.duration-1000 {
-  transition-duration: 1000ms;
 }
 
 .ease-in-out {

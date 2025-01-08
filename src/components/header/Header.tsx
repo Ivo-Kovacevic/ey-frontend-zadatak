@@ -1,5 +1,5 @@
 import { useState } from "react";
-import headlineImage from "/images/headline_image.png";
+import headlineImage from "/images/headline_image.webp";
 
 export default function Header() {
   const [loading, setLoading] = useState(true);

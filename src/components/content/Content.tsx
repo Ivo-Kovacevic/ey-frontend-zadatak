@@ -9,8 +9,8 @@ export default function Content() {
     const loadImage = async () => {
       const catImage = new Image();
       const dogImage = new Image();
-      catImage.src = "images/meow.png";
-      dogImage.src = "images/woof.png";
+      catImage.src = "images/meow.webp";
+      dogImage.src = "images/woof.webp";
       catImage.onload = dogImage.onload = () => setLoading(false);
     };
 
@@ -26,7 +26,7 @@ export default function Content() {
           className={`w-full flex-shrink-0 self-center rounded-xl md:w-2/5 ${loading && "aspect-square animate-pulse bg-gray-400"}`}
         >
           <img
-            src="images/meow.png"
+            src="images/meow.webp"
             alt="closeup picture of a cat"
             className={`w-full rounded-xl transition-opacity ${loading ? "opacity-0" : "opacity-100"}`}
           />
@@ -55,7 +55,7 @@ export default function Content() {
         <div
           className={`w-full flex-shrink-0 self-center rounded-xl md:w-2/5 ${loading && "aspect-square animate-pulse bg-gray-400"}`}
         >
-          <img src="images/woof.png" alt="closeup picture of a dog" className={`w-full rounded-xl transition-opacity ${loading ? "opacity-0" : "opacity-100"}`} />
+          <img src="images/woof.webp" alt="closeup picture of a dog" className={`w-full rounded-xl transition-opacity ${loading ? "opacity-0" : "opacity-100"}`} />
         </div>
 
         <div className="flex flex-col justify-between gap-8 lg:text-lg xl:text-xl">
